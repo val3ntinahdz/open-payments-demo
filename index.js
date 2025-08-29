@@ -7,6 +7,10 @@ const usuarios = [
 
 ]
 
+// Habilitando CORS middleware para que la app móvil pueda hablar con el servidor
+const cors = require('cors');
+app.use(cors());
+
 app.get('/api/saldo', (req, res) => {
     res.json({ mensaje: "Los usuarios", usuarios})
 })
