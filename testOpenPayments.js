@@ -1,9 +1,13 @@
+// Este módulo tiene como propósito conectar con la API de Open Payments y 
+// crear 1 usuario autenticado con sus respectivas credenciales importadas desde el archivo .env (wallet address, private_key y key_id)
+// también, obtiene la wallet address del usuario creado, la cual será muy útil para comenzar a generar transacciones de una wallet a otra
+
 // Este comando ayuda a que podamos extraer las variables almacenadas en .env
 import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
 // importar clientes autenticados y no autenticados desde el plugin de Open Payments
-import { createAuthenticatedClient, createUnauthenticatedClient } from "@interledger/open-payments";
+import { createAuthenticatedClient } from "@interledger/open-payments";
 
 dotenv.config();
 // Iniciar app express
